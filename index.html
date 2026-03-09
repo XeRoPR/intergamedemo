@@ -52,12 +52,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/874c26e000414f815eb96f6c42ecb3c3.loader.js";
+      var loaderUrl = buildUrl + "/BuildTest1.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/11edb0de3ab8400ce4f5a6b9fc9e26de.data.unityweb",
-        frameworkUrl: buildUrl + "/c11f8719fc4bbb71bbab07ebd853ca1c.framework.js.unityweb",
-        codeUrl: buildUrl + "/fcea9663598ffb9493f3884e3170dcf5.wasm.unityweb",
+        dataUrl: buildUrl + "/BuildTest1.data.unityweb",
+        frameworkUrl: buildUrl + "/BuildTest1.framework.js.unityweb",
+        codeUrl: buildUrl + "/BuildTest1.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Intership Project",
@@ -97,12 +97,11 @@
         renderHeight = 600;
         config.devicePixelRatio = 1;
       } else {
-        renderWidth = 1280;
-        renderHeight = 720;
+        renderWidth = 1600;
+        renderHeight = 900;
         config.devicePixelRatio = window.devicePixelRatio || 1;
       }
 
-      // Aplica al canvas
       canvas.width = renderWidth;
       canvas.height = renderHeight;
 
@@ -120,7 +119,6 @@
         document.querySelector("#unity-container").style.margin = "auto";
         document.querySelector("#unity-container").style.maxWidth = "100%";
       }
-
 
       document.querySelector("#unity-loading-bar").style.display = "block";
 
