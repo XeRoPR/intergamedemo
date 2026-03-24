@@ -52,18 +52,18 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/BuildTest3.loader.js";
+      var loaderUrl = buildUrl + "/BuildTest4.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/BuildTest3.data.unityweb",
-        frameworkUrl: buildUrl + "/BuildTest3.framework.js.unityweb",
-        codeUrl: buildUrl + "/BuildTest3.wasm.unityweb",
+        dataUrl: buildUrl + "/BuildTest4.data.unityweb",
+        frameworkUrl: buildUrl + "/BuildTest4.framework.js.unityweb",
+        codeUrl: buildUrl + "/BuildTest4.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Intership Project",
         productVersion: "0.1",
         showBanner: unityShowBanner,
-	matchWebGLToCanvasSize: false,
+	      matchWebGLToCanvasSize: false,
         // errorHandler: function(err, url, line) {
         //    alert("error " + err + " occurred at line " + line);
         //    // Return 'true' if you handled this error and don't want Unity
@@ -90,35 +90,30 @@
 
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      var renderWidth, renderHeight;
+      var renderWidth = 960;
+      var renderHeight = 600;
 
-      if (isMobile) {
-        renderWidth = 960;
-        renderHeight = 600;
-        config.devicePixelRatio = 1;
-      } else {
-        renderWidth = 1600;
-        renderHeight = 900;
-        config.devicePixelRatio = window.devicePixelRatio || 1;
-      }
-
+      config.devicePixelRatio = 1;
       canvas.width = renderWidth;
       canvas.height = renderHeight;
 
       if (isMobile) {
         var meta = document.createElement('meta');
         meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        meta.content = 'width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
+        
         document.querySelector("#unity-container").className = "unity-mobile";
         canvas.className = "unity-mobile";
-        config.requestedFrameRate = 60;
+
+        canvas.style.width = "95vw";
+        canvas.style.height = "auto";
       } else {
-        canvas.style.width = "80vw";
-        canvas.style.height = "80vh";
-        document.querySelector("#unity-container").style.margin = "auto";
-        document.querySelector("#unity-container").style.maxWidth = "100%";
+          canvas.style.width = "80vw";
+          canvas.style.height = "auto";
+          document.querySelector("#unity-container").style.margin = "auto";
       }
+      
 
       document.querySelector("#unity-loading-bar").style.display = "block";
 
