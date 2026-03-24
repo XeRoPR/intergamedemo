@@ -63,7 +63,7 @@
         productName: "Intership Project",
         productVersion: "0.1",
         showBanner: unityShowBanner,
-	      matchWebGLToCanvasSize: false,
+	      matchWebGLToCanvasSize: true,
         // errorHandler: function(err, url, line) {
         //    alert("error " + err + " occurred at line " + line);
         //    // Return 'true' if you handled this error and don't want Unity
@@ -90,12 +90,12 @@
 
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      var renderWidth = 960;
-      var renderHeight = 600;
+      //var renderWidth = 960;
+      //var renderHeight = 600;
 
       config.devicePixelRatio = 1;
-      canvas.width = renderWidth;
-      canvas.height = renderHeight;
+      //canvas.width = renderWidth;
+      //canvas.height = renderHeight;
 
       if (isMobile) {
         var meta = document.createElement('meta');
